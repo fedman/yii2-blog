@@ -20,7 +20,7 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-imagine": "*",
         "pendalf89/yii2-tree": "*",
-        "pendalf89/yii2-filemanager": "*",
+        "pendalf89/yii2-filemanager": "dev-master",
         "thiagotalma/yii2-jstree": "*",
         "kartik-v/yii2-widget-typeahead": "*",
         "kartik-v/yii2-widget-alert": "*"
