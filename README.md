@@ -1,4 +1,4 @@
-yii2-blog
+yii2-blog (fedman dev-master)
 =========
 
 Yii2 blog module
