@@ -106,4 +106,12 @@ class Category extends \yii\db\ActiveRecord
 
         return $list;
     }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getCategoryUrl() {
+        return \yii\helpers\Url::toRoute(['/blog/category', 'alias' => $this->alias]);
+    }
 }
