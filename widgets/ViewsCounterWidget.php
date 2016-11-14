@@ -30,7 +30,7 @@ class ViewsCounterWidget extends \yii\base\Widget
         if ($this->allowViewsIncrement($this->model->id)) {
 
             ++$this->model->views;
-            $this->model->detachBehavior('timestamp');
+            $this->model->detachBehaviors();
             $this->model->save();
             $viewed = Yii::$app->session->get('postViewsIncremented');
             $viewed = is_array($viewed) ? Yii::$app->session->get('postViewsIncremented') : [];
