@@ -16,14 +16,14 @@ use pendalf89\blog\models\Category;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => 255, 'class' => 'form-control translit-input']) ?>
 
-    <?= $form->field($model, 'parent_id')->dropDownList(Category::getList($model->id),
-        ['prompt' => Module::t('main', 'Select parent category')]) ?>
+    <?php // $form->field($model, 'parent_id')->dropDownList(Category::getList($model->id),
+        //['prompt' => Module::t('main', 'Select parent category')]) ?>
 
     <?= $form->field($model, 'alias')->textInput(['maxlength' => 255, 'class' => 'form-control translit-output']) ?>
 
-    <?= $form->field($model, 'position')
-        ->textInput()
-        ->hint(Module::t('main', 'Number of position on sorting. The higher the number, the higher category is to issue.')) ?>
+    <?php // $form->field($model, 'position')
+        //->textInput()
+        //->hint(Module::t('main', 'Number of position on sorting. The higher the number, the higher category is to issue.')) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Module::t('main', 'Create')

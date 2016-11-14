@@ -21,24 +21,24 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('<span class="glyphicon glyphicon-plus"></span> ' . Module::t('main', 'New category'),
             ['create'], ['class' => 'btn btn-success']) ?>
 
-        <?= Html::a('<span class="glyphicon glyphicon-tree-deciduous"></span> ' . Module::t('main', 'Category tree'),
-            ['tree'], ['class' => 'btn btn-primary']) ?>
+        <?php // Html::a('<span class="glyphicon glyphicon-tree-deciduous"></span> ' . Module::t('main', 'Category tree'),
+            //['tree'], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            [
-                'attribute' => 'parent_id',
-                'value' => function ($model) {
-                       return $model->getParentTitle();
-                    },
-                'filter' => Category::getList(),
-            ],
+//            [
+//                'attribute' => 'parent_id',
+//                'value' => function ($model) {
+//                       return $model->getParentTitle();
+//                    },
+//                'filter' => Category::getList(),
+//            ],
             'title',
             'alias',
-            'position',
+//            'position',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

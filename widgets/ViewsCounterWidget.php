@@ -27,13 +27,15 @@ class ViewsCounterWidget extends \yii\base\Widget
 
     public function run()
     {
-        if ($this->allowViewsIncrement()) {
+        if ($this->allowViewsIncrement($this->model->id)) {
 
             ++$this->model->views;
             $this->model->detachBehavior('timestamp');
             $this->model->save();
-
-            Yii::$app->session->set('postViewsIncremented', true);
+            $viewed = Yii::$app->session->get('postViewsIncremented');
+            $viewed = is_array($viewed) ? Yii::$app->session->get('postViewsIncremented') : [];
+            $viewed[] = $this->model->id;
+            Yii::$app->session->set('postViewsIncremented', $viewed);
         }
 
         return $this->model->views;
@@ -45,8 +47,13 @@ class ViewsCounterWidget extends \yii\base\Widget
      *
      * @return bool if views increment impossible return false.
      */
-    protected static function allowViewsIncrement()
+    protected static function allowViewsIncrement($postId)
     {
-        return Yii::$app->session->get('postViewsIncremented') ? false : true;
+        $viewed = Yii::$app->session->get('postViewsIncremented');
+        if (is_array($viewed)) {
+            return !in_array($postId, $viewed);
+        }
+        
+        return TRUE;
     }
 }

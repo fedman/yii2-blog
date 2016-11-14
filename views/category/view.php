@@ -33,13 +33,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            [
-                'attribute' => 'parent_id',
-                'value' => $model->getParentTitle(),
-            ],
+//            [
+//                'attribute' => 'parent_id',
+//                'value' => $model->getParentTitle(),
+//            ],
             'title',
             'alias',
-            'position',
+//            'position',
         ],
     ]) ?>
 
