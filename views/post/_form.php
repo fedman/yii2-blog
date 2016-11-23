@@ -76,7 +76,7 @@ if ($thumbModel = $model->getThumbnailModel()) {
 
                     <?= $form->field($model, 'alias')->textInput(['maxlength' => 255, 'class' => 'form-control translit-output']) ?>
 
-                    <?= $form->field($model, 'views')->textInput() ?>
+                    <?//= $form->field($model, 'views')->textInput() ?>
 
                     <?php if (!$model->isNewRecord) : ?>
                         <p>
@@ -132,14 +132,14 @@ if ($thumbModel = $model->getThumbnailModel()) {
                 <?php endif; ?>
             </div>
 
-	        <div class="panel panel-default">
+<!--	        <div class="panel panel-default">
 		        <div class="panel-body">
 
-			        <!-- Button trigger modal -->
+			         Button trigger modal 
 			        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modal-table">
 				        HTML-каркас таблицы
 			        </button>
-			        <!-- Modal -->
+			         Modal 
 			        <div class="modal fade" id="modal-table" tabindex="-1" role="dialog">
 				        <div class="modal-dialog" role="document">
 					        <div class="modal-content">
@@ -197,7 +197,7 @@ if ($thumbModel = $model->getThumbnailModel()) {
 			        </div>
 
 		        </div>
-	        </div>
+	        </div>-->
 
         </div>
         <!--Right column END-->
